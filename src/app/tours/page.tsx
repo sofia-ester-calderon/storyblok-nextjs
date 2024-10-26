@@ -3,7 +3,7 @@ import { RecommendedTour } from "@/components/RecommendedTour";
 import { draftMode } from "next/headers";
 
 const fetchToursPage = async () => {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory(`tours`, {
     version:
@@ -15,7 +15,7 @@ const fetchToursPage = async () => {
 };
 
 const fetchAllTours = async () => {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStories({
     content_type: "tour",

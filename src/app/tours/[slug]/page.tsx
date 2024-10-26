@@ -12,7 +12,7 @@ export const generateStaticParams = async () => {
 };
 
 const fetchTourPage = async (slug: string) => {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory(`tours/${slug}`, {
     version:

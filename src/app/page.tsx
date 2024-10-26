@@ -1,8 +1,10 @@
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 import { draftMode } from "next/headers";
 
+// https://storyblok-nextjs-zeta.vercel.app/api/draft?slug=
+
 const fetchHomePage = async () => {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory(`home`, {
     version:
