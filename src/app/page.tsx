@@ -1,7 +1,6 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+import { getStoryblokApi } from "@/storyblok";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import { draftMode } from "next/headers";
-
-// https://storyblok-nextjs-zeta.vercel.app/api/draft?slug=
 
 const fetchHomePage = async () => {
   const { isEnabled } = await draftMode();

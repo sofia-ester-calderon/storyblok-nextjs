@@ -1,6 +1,7 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import { RecommendedTour } from "@/components/RecommendedTour";
 import { draftMode } from "next/headers";
+import { getStoryblokApi } from "@/storyblok";
 
 const fetchToursPage = async () => {
   const { isEnabled } = await draftMode();

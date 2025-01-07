@@ -28,28 +28,29 @@ export const Tour = (props: any) => {
       <div
         className="prose md:prose-lg mt-16 max-w-none"
         dangerouslySetInnerHTML={{
-          __html: renderRichText(props.blok.body, {
-            schema: {
-              ...RichTextSchema,
-              nodes: {
-                ...RichTextSchema.nodes,
-                image: (node: ISbNode) => ({
-                  singleTag: [
-                    {
-                      tag: "img",
-                      attrs: {
-                        src: `${node.attrs.src}/m/1504x0/filters:quality(75)`,
-                        alt: node.attrs.alt,
-                        loading: "lazy",
-                        width: node.attrs.src.split("/")[5].split("x")[0],
-                        height: node.attrs.src.split("/")[5].split("x")[1],
+          __html:
+            renderRichText(props.blok.body, {
+              schema: {
+                ...RichTextSchema,
+                nodes: {
+                  ...RichTextSchema.nodes,
+                  image: (node: ISbNode) => ({
+                    singleTag: [
+                      {
+                        tag: "img",
+                        attrs: {
+                          src: `${node.attrs.src}/m/1504x0/filters:quality(75)`,
+                          alt: node.attrs.alt,
+                          loading: "lazy",
+                          width: node.attrs.src.split("/")[5].split("x")[0],
+                          height: node.attrs.src.split("/")[5].split("x")[1],
+                        },
                       },
-                    },
-                  ],
-                }),
+                    ],
+                  }),
+                },
               },
-            },
-          }),
+            }) ?? "",
         }}
       ></div>
     </main>

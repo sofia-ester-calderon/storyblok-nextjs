@@ -1,4 +1,5 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
+import { getStoryblokApi } from "@/storyblok";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import { draftMode } from "next/headers";
 
 export const generateStaticParams = async () => {
