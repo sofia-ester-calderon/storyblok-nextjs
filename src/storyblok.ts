@@ -8,7 +8,7 @@ import { Testimonial } from "./components/Testimonial";
 import { RecommendedTours } from "./components/RecommendedTours";
 
 export const getStoryblokApi = storyblokInit({
-  accessToken: process.env.STORYBLOK_TOKEN,
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
     tour: Tour,
