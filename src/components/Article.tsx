@@ -6,7 +6,7 @@ import {
 } from "@storyblok/react/rsc";
 import Image from "next/image";
 
-export const Tour = (props: any) => {
+export const Article = (props: any) => {
   return (
     <main
       {...storyblokEditable(props.blok)}

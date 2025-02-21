@@ -2,6 +2,7 @@ import { RecommendedTour } from "./RecommendedTour";
 import { storyblokEditable } from "@storyblok/react/rsc";
 
 export const RecommendedTours = (params: any) => {
+  console.log("recommendedtours", params)
   return (
     <section
       {...storyblokEditable(params.blok)}

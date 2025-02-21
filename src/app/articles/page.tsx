@@ -6,7 +6,7 @@ import { getStoryblokApi } from "@/storyblok";
 const fetchToursPage = async () => {
   const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
-  const response = await client.getStory(`tours`, {
+  const response = await client.getStory(`lrs-website/articles/`, {
     version:
       process.env.NODE_ENV === "development" || isEnabled
         ? "draft"
@@ -19,7 +19,7 @@ const fetchAllTours = async () => {
   const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStories({
-    content_type: "tour",
+    content_type: "article",
     version:
       process.env.NODE_ENV === "development" || isEnabled
         ? "draft"

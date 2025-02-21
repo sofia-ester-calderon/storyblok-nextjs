@@ -14,22 +14,12 @@ export const RecommendedTour = (props: any) => {
       <div className="p-8">
         <div className="flex gap-4 justify-between text-lg font-bold">
           <h3>{props.story.content.name}</h3>
-          <p>
-            {Number(props.story.content.price).toLocaleString("en-US", {
-              style: "currency",
-              currency: "TWD",
-              minimumFractionDigits: 0,
-            })}
-          </p>
         </div>
-        <p className="text-gray-700 uppercase font-bold mt-2 text-sm tracking-wide">
-          {props.story.content.location}, Taiwan
-        </p>
         <Link
           className="font-bold text-base mt-8 block underline"
-          href={`/${props.story.full_slug}`}
+          href={`articles/${props.story.slug}`}
         >
-          View Tour
+          View Article
         </Link>
       </div>
     </div>

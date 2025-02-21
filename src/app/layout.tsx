@@ -24,7 +24,7 @@ export default function RootLayout({
           <header>
             <nav className="container mx-auto px-4 w-full py-8 flex justify-between">
               <Link href={"/"}>Home</Link>
-              <Link href={"/tours"}>Tours</Link>
+              <Link href={"/articles"}>Articles</Link>
             </nav>
           </header>
           {children}
