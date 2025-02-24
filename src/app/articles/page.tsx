@@ -1,9 +1,9 @@
 import { StoryblokStory } from "@storyblok/react/rsc";
-import { RecommendedTour } from "@/components/RecommendedTour";
+import { RecommendedArticle } from "@/components/RecommendedArticle";
 import { draftMode } from "next/headers";
 import { getStoryblokApi } from "@/storyblok";
 
-const fetchToursPage = async () => {
+const fetchArticlesPage = async () => {
   const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory(`lrs-website/articles/`, {
@@ -15,7 +15,7 @@ const fetchToursPage = async () => {
   return response.data.story;
 };
 
-const fetchAllTours = async () => {
+const fetchAllArticles = async () => {
   const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStories({
@@ -28,19 +28,19 @@ const fetchAllTours = async () => {
   return response.data.stories;
 };
 
-const ToursPage = async () => {
-  const story = await fetchToursPage();
-  const tours = await fetchAllTours();
+const ArticlesPage = async () => {
+  const story = await fetchArticlesPage();
+  const articles = await fetchAllArticles();
 
   return (
     <div>
       <StoryblokStory story={story} />
       <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
-        {tours.map((tour) => (
-          <RecommendedTour story={tour} key={tour.content._uid} />
+        {articles.map((article) => (
+          <RecommendedArticle story={article} key={article.content._uid} />
         ))}
       </div>
     </div>
   );
 };
-export default ToursPage;
+export default ArticlesPage;

@@ -10,7 +10,7 @@ const fetchHomePage = async () => {
       process.env.NODE_ENV === "development" || isEnabled
         ? "draft"
         : "published",
-    resolve_relations: "recommended_tours.tours",
+    resolve_relations: "recommended_articles.articles",
   });
   console.log(response)
   return response.data.story;
@@ -20,7 +20,7 @@ const HomePage = async () => {
   const story = await fetchHomePage();
   return (
     <StoryblokStory
-      bridgeOptions={{ resolveRelations: ["recommended_tours.tours"] }}
+      bridgeOptions={{ resolveRelations: ["recommended_articles.articles"] }}
       story={story}
     />
   );

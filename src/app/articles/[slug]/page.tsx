@@ -13,7 +13,7 @@ export const generateStaticParams = async () => {
 };
 
 
-const fetchTourPage = async (slug: string) => {
+const fetchArticlePage = async (slug: string) => {
   const { isEnabled } = await draftMode();
   const client = getStoryblokApi();
   const response = await client.getStory(`lrs-website/articles/${slug}`, {
@@ -25,9 +25,9 @@ const fetchTourPage = async (slug: string) => {
   return response.data.story;
 };
 
-const TourPage = async (props: any) => {
-  const story = await fetchTourPage(props.params.slug);
+const ArticlePage = async (props: any) => {
+  const story = await fetchArticlePage(props.params.slug);
   return <StoryblokStory story={story} />;
 };
 
-export default TourPage;
+export default ArticlePage;
